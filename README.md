@@ -1,1 +1,1 @@
-# Quran-Player
+# Music-Player
