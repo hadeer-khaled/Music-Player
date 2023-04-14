@@ -1,7 +1,10 @@
 import songs from "./playlist.js"
 
 // let musicContent = document.querySelector(".music-content")
-let songsList = document.querySelector(".songs-list")
+var songsList = document.querySelector(".songs-list")
+var musicApp = document.querySelector(".music-app")
+var openListIcon = document.querySelector(".open-list")
+
 let songName = document.querySelector(".song-name")
 let artistName = document.querySelector(".artist-name")
 let songElem = document.querySelector(".song")
@@ -15,6 +18,7 @@ let progBar = document.querySelector(".progress-bar")
 var currentTimeSpan = document.querySelector(".current")
 var finalTimeSpan = document.querySelector(".final")
 
+var index = 0
 
 // Create PlayList
 function createSongsList() {
@@ -27,27 +31,30 @@ function createSongsList() {
     })
 }
 function getSelectedSong(index) {
-    // let selectedSongIndex = 0;
+    musicApp.style.display = "none"
+    songsList.style.display = "block"
     let songsParag = document.querySelectorAll(".song-info")
     Array.from(songsParag).forEach((songParag) => {
         songParag.addEventListener("click", () => {
-            index =+(songParag.id)
+            index = +(songParag.id)
+            console.log("getSelectedSong:", index)
+            musicApp.style.display = "flex"
+            songsList.style.display = "none"
+            loadData(index)
+            playSong()
         })
     })
-    // return selectedSongIndex;
 }
+openListIcon.addEventListener("click", getSelectedSong )
 
-var index = 0
 window.addEventListener("load", () => {
-    // createSongsList()
-    // getSelectedSong(index)
+    createSongsList()
     loadData(index)
 })
 
 function loadData(index) {
+    console.log("loadData:",index)
     songName.innerHTML = `${songs[index].name}`
-    console.log(`${index}`)
-    console.log(`${songs[index].name}`)
     artistName.innerHTML = `${songs[index].artist}`
     songElem.src = `/media/${songs[index].audio}.mp3`
 }
