@@ -47,6 +47,7 @@ body {
   box-shadow: var(--box-shadow-music-circle);
   padding: 1.5% 1.5%;
 }
+
 nav {
   display: flex;
   justify-content: end;
@@ -89,6 +90,24 @@ nav {
   margin-bottom: 5px;
   color: var(--text-color);
   font-family: "Lato", sans-serif;
+}
+@media (min-width: 200px) and (max-width: 375px) {
+  .container {
+    width: 80%;
+    height: 520px;
+  }
+  .music-icon {
+    width: 150px;
+    height: 150px;
+    font-size: 5em;
+  }
+}
+@media (max-width: 199px) {
+  .music-icon {
+    width: 130px;
+    height: 130px;
+    font-size: 4.5em;
+  }
 }
 .progressbar-details {
   width: 100%;
