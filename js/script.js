@@ -18,7 +18,7 @@ let progBar = document.querySelector(".progress-bar")
 var currentTimeSpan = document.querySelector(".current")
 var finalTimeSpan = document.querySelector(".final")
 
-var index = 0
+var index = 1
 
 // Create PlayList
 function createSongsList() {
