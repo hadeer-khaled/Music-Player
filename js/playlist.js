@@ -7,14 +7,14 @@ let songs = [
         
     },
     {
-        name: "Al-Fatihah",
+        name: "Yaseen",
         artist: "Hazza Al-Balushi",
         img: "Hazza",
         audio:"Hazza"
         
     },
     {
-        name: "Al-Fatihah",
+        name: "Al-Qadr",
         artist: "Wadie AL-Yamani",
         img: "Wadie",
         audio: "Wadie"
